@@ -21,13 +21,13 @@ module.exports = {
         path: `${__dirname}/src/pages`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `casestudy`,
-        path: `${__dirname}/src/casestudy/`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `casestudy`,
+    //     path: `${__dirname}/src/casestudy/`,
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -60,6 +60,14 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: process.env.SPACE_ID,
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+        downloadLocal: true,
       },
     },
     {
